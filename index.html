@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — DEEP SIGNALS</title>
+  <meta name="description" content="Política de Privacidad oficial del juego DEEP SIGNALS para Android. Información sobre recopilación de datos, anuncios y derechos del usuario." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --bg2: #12161f;
+      --cyan: #00d2d3;
+      --purple: #a29bfe;
+      --gold: #fdcb6e;
+      --text: #f5f6fa;
+      --muted: #a0aec0;
+      --border: rgba(0, 210, 211, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Scanlines */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-tag {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      color: var(--cyan);
+      background: rgba(0,210,211,0.08);
+      border: 1px solid var(--border);
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      text-shadow: 0 0 8px var(--cyan);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--cyan);
+      text-shadow: 0 0 20px rgba(0,210,211,0.4);
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .update-badge {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .update-badge span { color: var(--gold); }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 40px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 4px;
+      padding: 28px 32px;
+      position: relative;
+    }
+
+    section.purple { border-left-color: var(--purple); }
+    section.gold   { border-left-color: var(--gold); }
+    section.red    { border-left-color: #ff7675; }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section.purple h2 { color: var(--purple); }
+    section.gold h2   { color: var(--gold); }
+    section.red h2    { color: #ff7675; }
+
+    section h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+      flex-shrink: 0;
+    }
+
+    p { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    ul li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    section.purple ul li::before { color: var(--purple); }
+    section.gold ul li::before   { color: var(--gold); }
+
+    strong { color: var(--text); font-weight: 600; }
+
+    /* ── Permission Table ── */
+    .permission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .permission-table th {
+      text-align: left;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .permission-table td {
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+
+    .permission-table td:first-child {
+      font-family: monospace;
+      color: var(--cyan);
+      white-space: nowrap;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: rgba(0,210,211,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .contact-box p { color: var(--muted); font-size: 0.85rem; }
+    .contact-box a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+    }
+
+    footer .brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      text-shadow: 0 0 8px var(--cyan);
+      letter-spacing: 3px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 20px 16px; }
+      .wrapper { padding: 40px 16px 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="logo-tag">NEXUS CORE GAMES</div>
+      <h1>DEEP SIGNALS</h1>
+      <div class="subtitle">Política de Privacidad Oficial</div>
+      <div class="update-badge">Última actualización: <span>5 de junio de 2026</span></div>
+    </header>
+
+    <!-- Intro -->
+    <section>
+      <h2>INTRODUCCIÓN</h2>
+      <p>
+        En <strong>Nexus Core Games</strong>, desarrollador del juego móvil <strong>DEEP SIGNALS</strong>
+        (paquete: <code style="color:var(--cyan); font-size:0.85rem;">com.deepsignals.app</code>),
+        respetamos tu privacidad y nos comprometemos a proteger cualquier dato relacionado con tu
+        experiencia de juego. Esta política describe de forma clara y transparente qué información
+        se recopila, cómo se usa y cuáles son tus derechos como usuario.
+      </p>
+      <p>
+        Al instalar y usar DEEP SIGNALS, aceptas los términos descritos en esta política.
+        Si no estás de acuerdo con alguno de estos puntos, te pedimos que desinstales la aplicación.
+      </p>
+    </section>
+
+    <!-- Datos que recopilamos -->
+    <section class="purple">
+      <h2>INFORMACIÓN QUE RECOPILAMOS</h2>
+      <ul>
+        <li>
+          <strong>Progreso del juego (local):</strong> Tu profundidad de perforación, recursos
+          acumulados, tecnologías desbloqueadas, árbol de habilidades y ciclos de prestigio se
+          almacenan <strong>únicamente en tu dispositivo</strong> mediante LocalStorage. No se
+          transmiten a ningún servidor externo.
+        </li>
+        <li>
+          <strong>Identificador de publicidad (Ad ID):</strong> Si decides ver anuncios con recompensa
+          dentro del juego, el proveedor de anuncios (Google AdMob) puede acceder al Identificador
+          de Publicidad de Google de tu dispositivo para personalizar los anuncios y prevenir
+          fraudes publicitarios.
+        </li>
+        <li>
+          <strong>Google Play Games (opcional):</strong> Si vinculas tu cuenta de Google Play Games,
+          la aplicación accede a tu nombre de jugador y avatar públicos para identificar tu sesión.
+          No almacenamos tu contraseña ni datos financieros.
+        </li>
+        <li>
+          <strong>Datos de uso anónimos:</strong> Google AdMob puede recopilar datos de uso
+          agregados y anónimos (como impresiones de anuncios y clics) conforme a su propia
+          <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--purple);">
+            Política de Privacidad
+          </a>.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Permisos -->
+    <section class="gold">
+      <h2>PERMISOS DEL DISPOSITIVO</h2>
+      <table class="permission-table">
+        <thead>
+          <tr>
+            <th>PERMISO</th>
+            <th>MOTIVO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTERNET</td>
+            <td>Necesario para cargar anuncios de Google AdMob y conectarse a Google Play Games Services.</td>
+          </tr>
+          <tr>
+            <td>VIBRATE</td>
+            <td>Proporciona retroalimentación háptica táctil durante eventos sísmicos y acciones de excavación en el juego.</td>
+          </tr>
+          <tr>
+            <td>AD_ID</td>
+            <td>Permite al SDK de Google Mobile Ads identificar el dispositivo para servir anuncios relevantes y medir su rendimiento.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px; font-size:0.8rem;">
+        La aplicación <strong>no solicita</strong> permisos de cámara, micrófono, ubicación,
+        contactos ni almacenamiento externo.
+      </p>
+    </section>
+
+    <!-- Anuncios -->
+    <section>
+      <h2>PUBLICIDAD Y MONETIZACIÓN</h2>
+      <p>
+        DEEP SIGNALS utiliza <strong>Google AdMob</strong> para mostrar anuncios voluntarios
+        con recompensa (<em>Rewarded Ads</em>). Estos anuncios son completamente opcionales:
+        el jugador elige verlos a cambio de bonificaciones dentro del juego.
+      </p>
+      <ul>
+        <li>Los anuncios <strong>nunca interrumpen</strong> la partida de forma forzada.</li>
+        <li>El Identificador de Publicidad puede desactivarse en: <br/>
+          <strong>Ajustes de Android → Google → Anuncios → Inhabilitar personalización de anuncios</strong>.
+        </li>
+        <li>Google AdMob cumple con el Reglamento General de Protección de Datos (RGPD/GDPR)
+          y la Ley de Privacidad del Consumidor de California (CCPA).</li>
+      </ul>
+    </section>
+
+    <!-- Menores -->
+    <section class="red">
+      <h2>PÚBLICO OBJETIVO Y MENORES DE EDAD</h2>
+      <p>
+        DEEP SIGNALS está diseñado para usuarios de <strong>13 años o más</strong>.
+        La aplicación <strong>no está dirigida a niños menores de 13 años</strong> y
+        no recopila intencionalmente información personal de menores. Si eres padre o tutor y
+        crees que tu hijo ha proporcionado información personal, contáctanos para eliminarla.
+      </p>
+    </section>
+
+    <!-- Retención -->
+    <section>
+      <h2>RETENCIÓN Y ELIMINACIÓN DE DATOS</h2>
+      <ul>
+        <li>
+          <strong>Eliminar todo el progreso local:</strong> Ve a la pestaña
+          <em>Tienda → Configuración del sistema → Zona de Peligro</em> y pulsa
+          <strong>"Purgar Núcleo de Datos"</strong>.
+        </li>
+        <li>
+          <strong>Desvincular Google Play Games:</strong> Ve a la pestaña
+          <em>Tienda → Configuración → Nube & Google Play Games → Desconectar</em>,
+          o desde los <em>Ajustes de tu cuenta de Google → Aplicaciones conectadas</em>.
+        </li>
+        <li>
+          <strong>Datos de AdMob:</strong> Google administra la retención de datos de publicidad
+          según sus propias políticas. Puedes solicitar la eliminación de tus datos a través del
+          <a href="https://myaccount.google.com/data-and-privacy" target="_blank" style="color:var(--cyan);">
+            Centro de Privacidad de Google
+          </a>.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Cambios -->
+    <section class="purple">
+      <h2>CAMBIOS EN ESTA POLÍTICA</h2>
+      <p>
+        Nos reservamos el derecho de actualizar esta política cuando integremos nuevas
+        funcionalidades como Cloud Save de Google Play, compras dentro de la aplicación
+        (in-app purchases) o nuevas redes publicitarias. Cualquier cambio significativo
+        será notificado mediante un aviso dentro de la propia aplicación al iniciarla.
+      </p>
+      <p>
+        La fecha de <em>"Última actualización"</em> al inicio de este documento siempre
+        reflejará la versión vigente de la política.
+      </p>
+    </section>
+
+    <!-- Contacto -->
+    <section class="gold">
+      <h2>CONTACTO</h2>
+      <div class="contact-box">
+        <p>¿Tienes preguntas sobre tu privacidad o quieres ejercer tus derechos?</p>
+        <p style="margin-top:12px;">
+          Escríbenos a:<br/>
+          <a href="mailto:soporte@deepsignals.app">soporte@deepsignals.app</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span class="brand">DEEP SIGNALS</span>
+      © 2026 Nexus Core Games. Todos los derechos reservados.<br/>
+      ID de Aplicación: <code style="color:var(--cyan);">com.deepsignals.app</code>
+    </footer>
+
+  </div>
+</body>
+</html>
